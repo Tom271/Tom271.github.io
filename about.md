@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-feature-img: "assets/img/sample_feature_img_2.png"
+#feature-img: "assets/img/sample_feature_img_2.png"
 ---
 
 I am a PhD student in the [Maxwell Institute Graduate School of Analysis and its Applications](http://www.maxwell.ac.uk/migsaa) (MIGSAA), formed by the Universities of Edinburgh and Heriot-Watt. This has now been superseded by the [MAC-MIGS](https://www.mac-migs.ac.uk/) CDT.
