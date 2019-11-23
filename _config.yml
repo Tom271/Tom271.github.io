@@ -5,21 +5,22 @@ url: "https://tom271.github.io/"
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Tom 271
-  avatar: assets/img/avatar.png
+  title: Tom Hodgson
+  avatar: assets/img/sticks.jpg
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
   description: "Personal Website" # used by search engines
 
   # Header and footer text
-  header_text: "<h1> Tester</h1> Here lies everything I've ever worked on. Yadda yadda intro"
+  header_text: "<h1> PlaceHolder </h1> Here lies everything I've ever worked on.
+  _______________________________________"
   header_text_feature_image:
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
   # Icons
   rss: false
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: t.m.hodgson_at_sms.ed.ac.uk # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
@@ -77,6 +78,7 @@ sass:
   sass_dir: _sass
   style: :compressed
 plugins: [jekyll-paginate]
+
 exclude:
   - Gemfile
   - Gemfile.lock
