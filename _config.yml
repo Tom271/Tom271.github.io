@@ -62,7 +62,8 @@ theme_settings:
 
   # Colours, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: "PT+Serif:400,700,700italic,400italic"
+  google_fonts: "Playfair+Display:400,700"
+  google_fonts_1: "EB+Garamond:400,700,700italic,400italic" # PT serif is also nice
 
   # Post navigation
   post_navigation: false

@@ -79,6 +79,7 @@ code,
 kbd,
 pre,
 samp {
+  font-size: 0.88em;
   margin: 1em 0;
 }
 dt {
@@ -107,7 +108,7 @@ ol, ul {
 hr {
   border: 0;
   border-top: 1px solid $border-color;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid   #F2F2F2 ;
   margin: 1em 0;
 }
 a {
@@ -122,6 +123,12 @@ a {
 // Responsive media
 iframe, img, embed, object, video {
   max-width: 100%;
+}
+img[src*="#thumbnail"]{
+    object-fit: cover;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
 }
 img[align=left] {
   margin-right: 3%;

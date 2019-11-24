@@ -10,8 +10,14 @@ permalink: /projects/
    height="200"></a>
 {% endfor %} -->
 
-{% for my_post in site.posts -%}
+<!-- {% for my_post in site.posts -%}
 {% if my_post.title -%}
 |![]({{ site.baseurl }}/{{ my_post.feature-img }})  |[Click Here]({{ my_post.url }})  |
+{% endif %}
+{%- endfor -%} -->
+
+{% for my_post in site.posts -%}
+{% if my_post.title -%}
+|[ ![]({{ site.baseurl }}/{{ my_post.feature-img }}#thumbnail) ]({{ my_post.url }})  | **{{ my_post.title }}** <br> A Some way of dynamically adding unique description?  |
 {% endif %}
 {%- endfor -%}
