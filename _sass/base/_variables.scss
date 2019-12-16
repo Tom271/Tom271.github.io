@@ -1,6 +1,6 @@
 // Typography
-$font-family-main: 'EB Garamond', Helvetica, Arial, sans-serif !default;
-$font-family-headings: 'Playfair Display', Helvetica, Arial, sans-serif !default;
+$font-family-main: 'PT Serif', Helvetica, Arial, sans-serif !default;
+$font-family-headings: 'PT Serif', Helvetica, Arial, sans-serif !default;
 $font-size: 1.10em !default;
 
 // Padding
@@ -9,7 +9,7 @@ $padding-small: 5% !default;
 $padding-x-small: 3% !default;
 
 // Brand colours
-$brand-color: #F2F2F2 !default; // any color as long as it's not white
+$brand-color: #F2F2F2 !default;
 $background-color: #F2F2F2 !default;
 $border-color: rgba(0, 0, 0, 0.1) !default; // rgba recommended if using feature images
 
@@ -28,10 +28,10 @@ $search-color: #999 !default;
 $header-link-color: #454545 !default;
 
 // Feature image for articles
-$feature-image-text-color:  #F2F2F2 !default;
+$feature-image-text-color: #fff !default;
 $feature-image-size: cover !default; // options include "cover", "contain", "auto"
 
 // Header description box
-$header-desc-background-color: #39c5c5 !default; // split complementary withi #c57f39 and #c53939
+$header-desc-background-color: #F2F2F2 !default;
 $header-desc-text-color: #454545 !default;
 $header-desc-link-color: #02453D !default;
