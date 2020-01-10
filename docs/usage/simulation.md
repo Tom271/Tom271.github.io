@@ -11,7 +11,7 @@ Calculate the squared centred L2 discrepancy for quantifying uniformity.
 
 * **Parameters**
 
-    
+
     * **x** – vector containing particle positions at a given time
 
 
@@ -39,7 +39,7 @@ Calculate interaction term of the full particle system
 
 * **Parameters**
 
-    
+
     * **x_curr** – np.array of current particle positions
 
 
@@ -52,18 +52,13 @@ Calculate interaction term of the full particle system
     * **L** – domain length, float
 
 
-    * **denominator** – string corresponding to scaling by the total number of
-
-
-    * **or the number of particles that are interacting with each particle** (*particles*) – 
+    * **denominator** – string corresponding to scaling by the total number of particles or the number of particles that are interacting with each particle**  
 
 
 
 * **Returns**
 
-    vector containing the interaction at the current
-
-        time step for each particle
+    vector containing the interaction at the current time step for each particle
 
 
 
@@ -85,7 +80,7 @@ Euler-Maruyama scheme.
 
 * **Parameters**
 
-    
+
     * **particles** (*int*) – Number of particles to simulate.
 
 
@@ -149,7 +144,7 @@ Euler-Maruyama scheme.
 
 * **Parameters**
 
-    
+
     * **particles** – Number of particles to simulate, int.
 
 

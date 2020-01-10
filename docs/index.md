@@ -1,7 +1,8 @@
-<!-- Interacting Particle Systems documentation master file, created by
-sphinx-quickstart on Fri Jan 10 13:44:40 2020.
-You can adapt this file completely to your liking, but it should at least
-contain the root `toctree` directive. -->
+---
+layout: page
+title: My Awesome Resume!
+custom_css: alabaster
+---
 # Welcome to Interacting Particle Systems’s documentation!
 
 
