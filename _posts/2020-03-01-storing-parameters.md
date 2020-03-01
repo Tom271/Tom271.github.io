@@ -145,6 +145,11 @@ So now the two Numpy arrays have been retrieved!
 
 This is one way to store parameters and data, but I'd be interested in hearing your ways! Are there glaring errors here? Get in touch!
 
+Questions I still have include:
+
+- When the `.yaml` file gets too big, searching for a parameter set takes longer and longer: is there a quicker way of searching? Or of splitting the `.yaml`?
+- Is Feather the best format to use here?
+
 ## Useful Links
 
 - [Don't Pickle Your Data](https://www.benfrederickson.com/dont-pickle-your-data/)
