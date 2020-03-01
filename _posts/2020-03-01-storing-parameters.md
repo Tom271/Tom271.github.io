@@ -156,5 +156,4 @@ Questions I still have include:
 - [Best format for pd DataFrame](https://towardsdatascience.com/the-best-format-to-save-pandas-data-414dca023e0d)
 - [Parquet Pandas docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet)
 - [Feather](https://blog.rstudio.com/2016/03/29/feather/)
-
 - [Difference between Parquet and Feather](https://stackoverflow.com/questions/48083405/what-are-the-differences-between-feather-and-parquet)
