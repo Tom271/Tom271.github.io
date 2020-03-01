@@ -24,7 +24,7 @@ The data comes from the simulation as two large matrices (on the order of 100 co
 
 Previously, I'd remember which parameter sets generated what data by naming the file with a list of parameters, or having a file tree where each folder had a parameter choice. Obviously, this is not the best way. Looking for a data set usually meant guessing what order the parameters were saved in and lots of clicking. Now I use a `.yaml` file. This is a way of storing what is effectively a large Python dictionary, which can be read in using [`pyyaml`](https://pypi.org/project/PyYAML/). The keys of the dictionary are the filenames of the data, and the values are also dictionaries that contain parameter sets.  File names were randomly generated using [`coolname`](https://pypi.org/project/coolname/) . Any random string can be used, but not all of them will be as amusing.
 
-![yaml screenshot]({{ site.baseurl }}/assets/img/yaml_screenshot.png)
+![yaml_screenshot]({{ site.baseurl }}/assets/img/yaml_screenshot.PNG)
 
 The first step is to read in the `.yaml` file:
 
