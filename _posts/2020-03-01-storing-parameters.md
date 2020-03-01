@@ -14,9 +14,6 @@ These themselves are associated with the two obvious parts of data storage: read
 ![data flowchart]({{ site.baseurl }}/assets/img/data_flowchart.svg)
 
 
-
-
-
 This probably raises more questions than it answers but hopefully what follows will answer them.
 
 ## Writing Data: Storage Format
@@ -52,14 +49,14 @@ So we iterate through the keys (filenames) in the history and see if there is an
 
 ```python
 elif parameters.items() <= history[name].items():
-            print(
-                "Given parameters are subset of existing set, additional parameters are:"
-            )
-            additional_parameters = {
-                k: history[name][k] for k in set(history[name]) - set(parameters)
-            }
-            print(additional_parameters)
-            filename = name
+  print(
+      "Given parameters are subset of existing set, additional parameters are:"
+  )
+  additional_parameters = {
+      k: history[name][k] for k in set(history[name]) - set(parameters)
+  }
+  print(additional_parameters)
+  filename = name
 ```
 
 Finally, for some parameters the value may not matter as much. For example, say I want to run a simulation with a parameter set for 20 seconds. If I've already ran the same set for 50 seconds, there is not much point in re-simulating—instead the first 20 seconds of the old data should be retrieved. This is very much dependent on what your parameters mean and should be done on a case-by-case, parameter-by-parameter basis.
