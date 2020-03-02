@@ -2,6 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
+hidden: true
 ---
 <!--
 {% for post in site.posts %}
@@ -10,8 +11,8 @@ permalink: /projects/
    height="200"></a>
 {% endfor %} -->
 
-{% for my_post in site.posts -%}
+<!-- {% for my_post in site.posts -%}
 {% if my_post.title -%}
 |![]({{ site.baseurl }}/{{ my_post.feature-img }})  |[Click Here]({{ my_post.url }})  |
 {% endif %}
-{%- endfor -%}
+{%- endfor -%} -->
