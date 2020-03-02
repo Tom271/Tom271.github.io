@@ -13,4 +13,4 @@ This website is a place to document my academic work, as well as place to put ot
 
 Any comments, questions, errors, drop me an email using the icon in the top right. Change \_at\_ to @.
 
-Not sure where to start? Learn about how [birds flock]({% link ips.md %}), or if equations are your thing, [try this]({% link ips.md %}). If not, give [MCMC a try]({% post_url 2019-04-29-langevin-mc %})!
+Not sure where to start? See my most recent talk on how [animals flock]({% link ips.md %}), or if Python is your thing, [try this]({% post_url 2020-03-01-storing-parameters %}). 
