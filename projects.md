@@ -2,6 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
+hide: True
 ---
 <!--
 {% for post in site.posts %}
