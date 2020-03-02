@@ -12,7 +12,8 @@ theme_settings:
   description: "PhD Student at the Maxwell Institute" # used by search engines
 
   # Header and footer text
-  header_text: "<h1> Welcome </h1> <p> Scroll down to see recent posts </p> <hr>"
+  header_text: "<h1> Welcome </h1> <p> Scroll down to see recent posts </p>
+  <hr>"
   header_text_feature_image:
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
