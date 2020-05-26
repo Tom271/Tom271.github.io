@@ -4,7 +4,7 @@ title: "Tom Hodgson"
 description: "Tom Hodgson⁠—PhD Student at the Maxwell Institute, Edinburgh"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
-baseurl: /index
+baseurl: ''
 google_analytics:
 disqus:
 mailchimp-list:
