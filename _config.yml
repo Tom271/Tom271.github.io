@@ -1,84 +1,70 @@
-# SITE CONFIGURATION
-baseurl: ""
-url: "https://tom271.github.io/"
+# Site
+name: "Tom Hodgson⁠—Maxwell Institute"
+title: "Tom Hodgson"
+description: "Tom Hodgson⁠—PhD Student at the Maxwell Institute, Edinburgh"
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/logo.png'
+baseurl: /index
+google_analytics:
+disqus:
+mailchimp-list:
+include: ["_pages"]
+permalink: /:title/
+email: tmh2_at_hw.ac.uk
 
-# THEME-SPECIFIC CONFIGURATION
-theme_settings:
-  # Meta
-  title: Tom Hodgson
-  avatar: assets/img/sticks.jpg
-  favicon: assets/favicon.ico
-  gravatar: # Email MD5 hash
-  description: "PhD Student at the Maxwell Institute" # used by search engines
+# Authors
+authors:
+  tom:
+    name: Tom
+    display_name: Tom
+    avatar: assets/images/logo.png
+    email: tmh2_at_hw.ac.uk
+    web: https://github.com/Tom271/
 
-  # Header and footer text
-  header_text: "<h1> Welcome </h1> <p>Scroll down to see my recent posts</p>
-  <hr>"
-  header_text_feature_image:
-  footer_text: >
-   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-figure
 
-  # Icons
-  rss: false
-  email_address: t.m.hodgson_at_sms.ed.ac.uk # Full email address, e.g. "sam@example.com"
-  behance:
-  bitbucket:
-  dribbble:
-  facebook:
-  flickr:
-  gitlab:
-  github: "tom271"
-  gitter:
-  google_plus:
-  instagram:
-  linkedin:  # Full URL
-  pinterest:
-  reddit:
-  soundcloud:
-  stack_exchange:  # Full URL
-  steam:
-  tumblr:
-  twitter:
-  wordpress:
-  youtube:
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
 
-  # Scripts
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname:
-  katex: true # Enable if using math markup
-  search: false # Enable the search feature
+# Pagination
+paginate: 6
+paginate_path: /page:num/
 
-  # Localization strings
-  str_follow_on: "Follow on"
-  str_rss_follow: "Follow RSS feed"
-  str_email: "Email"
-  str_next_post: "Next post"
-  str_previous_post: "Previous post"
-  str_next_page: "Next"
-  str_previous_page: "Prev"
-  str_continue_reading: "Continue reading"
-  str_javascript_required_disqus: "Please enable JavaScript to view comments."
-  str_search_no_results: "No results found."
-
-  # Colours, typography and padding
-  # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: "PT+Serif:400,700,700italic,400italic"
-
-  # Post navigation
-  post_navigation: false
-
-# PAGINATION
-paginate: 5
-paginate_path: "blog/page:num"
-
-# BUILD SETTINGS
+# Other
+highlighter: none
 markdown: kramdown
-highlighter: rouge
+kramdown:
+   syntax_highlighter_opts:
+      disable : true
+
+
+
+# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
+# adsense: "disabled"
+# adsense-data-ad-client: "ca-pub-3412143450191416"
+# adsense-data-ad-slot: "1363087678"
+
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "disabled"
+
+# Post Author Box ("enabled" or "disabled")
+authorbox: "disabled"
+
+# Sass
 sass:
   sass_dir: _sass
-  style: :compressed
-plugins: [jekyll-paginate]
+  style: compressed
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]

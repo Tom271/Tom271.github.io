@@ -1,6 +1,10 @@
 ---
 layout: post
 title:  Saving Simulation Data and Parameters Efficiently
+author: tom
+comments: false
+image: assets/images/yaml_screenshot.png
+categories: [ Python ]
 ---
 During my work on particle systems, I have spent a lot of time simulating trajectories of particles using different parameters and initial conditions. Until now, I'd been either running a new simulation every time, or saving individual datasets with filenames like `GammaFullScaling04`,  or other incomprehensible strings made by concatenating parameter values. As the amount of data has increased, this has become untenable, so I've been spending some time recently coming up with a better way.  This problem is not unique to my situation, I imagine many scientists are in a similar position! After some googling, I couldn't find any clear method. After a chat with [a data engineering friend of mine](https://sebstrug.com/) he suggested looking into `.yaml` files as a way to store parameters.
 
@@ -11,7 +15,7 @@ There are two main problems I needed to solve:
 
 These themselves are associated with the two obvious parts of data storage: reading and writing. Each of these poses their own questions. My current data pipeline is as follows:
 
-![data flowchart]({{ site.baseurl }}/assets/img/data_flowchart.svg)
+![data flowchart]({{ site.baseurl }}/assets/images/data_flowchart.svg)
 
 
 This probably raises more questions than it answers but hopefully what follows will answer them.
@@ -24,7 +28,7 @@ The data comes from the simulation as two large matrices (on the order of 100 co
 
 Previously, I'd remember which parameter sets generated what data by naming the file with a list of parameters, or having a file tree where each folder had a parameter choice. Obviously, this is not the best way. Looking for a data set usually meant guessing what order the parameters were saved in and lots of clicking. Now I use a `.yaml` file. This is a way of storing what is effectively a large Python dictionary, which can be read in using [`pyyaml`](https://pypi.org/project/PyYAML/). The keys of the dictionary are the filenames of the data, and the values are also dictionaries that contain parameter sets.  File names were randomly generated using [`coolname`](https://pypi.org/project/coolname/) . Any random string can be used, but not all of them will be as amusing.
 
-![yaml_screenshot]({{ site.baseurl }}/assets/img/yaml_screenshot.PNG)
+![yaml_screenshot]({{ site.baseurl }}/assets/images/yaml_screenshot.PNG)
 
 The first step is to read in the `.yaml` file:
 
@@ -156,5 +160,4 @@ Questions I still have include:
 - [Best format for pd DataFrame](https://towardsdatascience.com/the-best-format-to-save-pandas-data-414dca023e0d)
 - [Parquet Pandas docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_parquet.html#pandas.DataFrame.to_parquet)
 - [Feather](https://blog.rstudio.com/2016/03/29/feather/)
-
 - [Difference between Parquet and Feather](https://stackoverflow.com/questions/48083405/what-are-the-differences-between-feather-and-parquet)
