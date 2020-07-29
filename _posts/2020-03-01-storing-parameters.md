@@ -6,6 +6,10 @@ categories: [Python]
 image: assets/images/yaml_screenshot.png
 comments: false
 ---
+
+UPDATE (25/07/20): It seems my initial search for packages that do this was not hitting the right keywords. I've since found there are [quite a few out there!](https://gist.github.com/mnarayan/d33ea8a13c9d5da7c4d0) For now, I'm still using a version based on what's below.
+
+
 During my work on particle systems, I have spent a lot of time simulating trajectories of particles using different parameters and initial conditions. Until now, I'd been either running a new simulation every time, or saving individual datasets with filenames like `GammaFullScaling04`,  or other incomprehensible strings made by concatenating parameter values. As the amount of data has increased, this has become untenable, so I've been spending some time recently coming up with a better way.  This problem is not unique to my situation, I imagine many scientists are in a similar position! After some googling, I couldn't find any clear method. After a chat with [a data engineering friend of mine](https://sebstrug.com/) he suggested looking into `.yaml` files as a way to store parameters.
 
 There are two main problems I needed to solve:
