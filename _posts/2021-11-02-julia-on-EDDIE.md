@@ -3,10 +3,11 @@ layout: post
 title:  "Using Julia on EDDIE at University of Edinburgh"
 author: tom
 categories: [HPC]
+image: assets/images/julia_repl.png
 comments: false
 ---
 > TL;DR : `module load roslin/julia/1.5.3`
->
+
 For my next project during my PhD, I've decide to use the programming language [Julia](https://julialang.org/). Although it is much faster than Python, my usual language, there are still a few simulation I want to run that will take a lot of time. Previously I've used [EDDIE, the HPC cluster](https://www.ed.ac.uk/information-services/research-support/research-computing/ecdf/high-performance-computing) at the University of Edinburgh when I needed a little more computing power, or when I expect simulations to take a while and don't want to brick my laptop. I've written previously about using MATLAB and Python on EDDIE, but now I need to work out how to get Julia working. This process will work for any language you want to see if is available on the cluster.
 
 As usual, first of all you'll have to [sign into the UoE VPN](https://www.ed.ac.uk/information-services/computing/desktop-personal/vpn), and `ssh` into the cluster. To find out whether the module exists, we can use `module available`.
