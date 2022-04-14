@@ -6,7 +6,7 @@ comments: false
 ---
 
 ## 2019-20 (Maxwell Institute)
-###Semester 1
+### Semester 1
 - F78QT -- Quantitative Methods
 
 ### Semester 2
