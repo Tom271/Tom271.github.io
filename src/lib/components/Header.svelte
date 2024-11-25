@@ -1,5 +1,5 @@
 <header>
-	<a href="/"><i class="fa-solid fa-leaf"></i></a>
+	<a href="/" aria-label="Home"><i class="fa-solid fa-leaf"></i></a>
 	<nav>
 	  <ul>
 		<li></li>

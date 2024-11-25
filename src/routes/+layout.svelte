@@ -24,8 +24,8 @@
   
       <!-- Social Links -->
       <div class="social-links">
-        <a href="https://github.com/tom271" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://linkedin.com/in/thomasmhodgson" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a aria-label="Github" href="https://github.com/tom271" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a aria-label="LinkedIn" href="https://linkedin.com/in/thomasmhodgson" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
       </div>
   
       <!-- Copyright Notice -->
