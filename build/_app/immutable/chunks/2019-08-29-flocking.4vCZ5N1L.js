@@ -1,0 +1,1 @@
+import{a as t,t as e}from"./disclose-version.B_5u8fbv.js";import"./legacy.BXZnAjCZ.js";const r={title:"Flocking Models in Biology",shorttitle:"Flocking Models in Biology",date:"2019-08-29"};var n=e("<p>Background on flocking models etc. Describing Vicsek. The beginning of a lit review??</p>");function c(o){var i=n();t(o,i)}export{c as default,r as metadata};
