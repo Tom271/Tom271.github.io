@@ -2,8 +2,9 @@
 export interface Post {
 	title: string;
 	date: string;
-	excerpt: string;
+	excerpt?: string;
 	slug: string;
+	shorttitle?: string;
   }
   
 export const fetchMarkdownPosts = async () => {
@@ -14,9 +15,14 @@ export const fetchMarkdownPosts = async () => {
 		iterablePostFiles.map(async ([path, resolver]) => {
 			const { metadata } = await resolver();
 			const postPath = path.slice(11, -3);
-
+			// Set default values for metadata properties
+			const metaWithDefaults = {
+				...metadata,
+				shorttitle: metadata.shorttitle ?? metadata.title,
+				excerpt: metadata.excerpt ?? "",
+			  };
 			return {
-				meta: metadata,
+				meta: metaWithDefaults,
 				path: postPath
 			};
 		})
