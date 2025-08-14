@@ -54,7 +54,7 @@
 				{post.meta.date}
 			</div>
 			<p class="subtitle" style="font-weight:200;font-size:1.5rem">
-				{post.meta.excerpt}
+				{@html post.meta.excerpt}
 			</p>
 			{#if post.meta.tags && post.meta.tags.length > 0}
 				<div class="post-tags">

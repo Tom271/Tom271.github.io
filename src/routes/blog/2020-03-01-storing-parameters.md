@@ -1,6 +1,7 @@
 ---
 title: 'Saving Simulation Data and Parameters Efficiently'
 shorttitle: 'Saving Simulation Data and Parameters Efficiently'
+excerpt: Build your own experiment manager.
 date: '2020-03-01'
 tags: ['project']
 ---

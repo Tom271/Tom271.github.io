@@ -1,6 +1,7 @@
 ---
 title: 'Using Julia on EDDIE at University of Edinburgh'
 shorttitle: 'Julia for HPC'
+excerpt: How to find installed languages on a cluster.
 categories: [HPC]
 date: '2021-11-02'
 tags: ['project']
