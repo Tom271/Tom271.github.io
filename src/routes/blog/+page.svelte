@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Post } from '$lib/utils';
+	import PostGrid from '$lib/components/PostGrid.svelte';
 	export let data: { allPosts: Post[], allTags: string[] };
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
@@ -45,28 +46,7 @@
 	{/each}
 </div>
 
-<section class="posts-grid">
-	{#each filteredPosts as post}
-		<a href={post.path} class="post-tile">
-			<h3>
-				{post.meta.shorttitle}
-			</h3>
-			<div class="post-date">
-				{post.meta.date}
-			</div>
-			<p class="subtitle" style="font-weight:200;font-size:1.5rem">
-				{@html post.meta.excerpt}
-			</p>
-			{#if post.meta.tags && post.meta.tags.length > 0}
-				<div class="post-tags">
-					{#each post.meta.tags as tag}
-						<span class="tag">{tag}</span>
-					{/each}
-				</div>
-			{/if}
-		</a>
-	{/each}
-</section>
+<PostGrid posts={filteredPosts} />
 
 <style>
 	.tag-filter {
@@ -97,18 +77,4 @@
 		border-color: #333;
 	}
 
-	.post-tags {
-		margin-top: 0.5rem;
-		display: flex;
-		gap: 0.25rem;
-		flex-wrap: wrap;
-	}
-
-	.tag {
-		background: #e0e0e0;
-		padding: 0.2rem 0.5rem;
-		border-radius: 3px;
-		font-size: 0.8rem;
-		color: #666;
-	}
 </style>
