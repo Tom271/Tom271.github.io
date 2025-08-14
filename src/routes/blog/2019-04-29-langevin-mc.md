@@ -2,6 +2,7 @@
 title: Langevin Monte Carlo Algorithms
 shorttitle: Langevin Monte Carlo Algorithms
 date: '2019-04-29'
+tags: ['draft']
 ---
 
 ## OUT OF DATE // DRAFT // OUT OF DATE
