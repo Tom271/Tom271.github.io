@@ -10,7 +10,7 @@ import rec_img from "$lib/assets/config_rec.png"
 import sched_img from "$lib/assets/config_sched.png"
 </script>
 
-How do they work? The first part of the [Big Bird Seed Experiment](./docs/00_plan.md).
+How do they work? The first part of the [Big Bird Seed Experiment](2025-02-15-bbse-plan).
 
 # Hardware
 
