@@ -13,7 +13,10 @@
 			<img src={myImage} alt="Tom" class="profile-image" />
 		</div>
 		<p>
-			Before this I did a PhD in mathematics supervised by Michela Ottobre and Kevin Painter, working on invariant measures of interacting particle systems, both analytically and numerically.
+			Before this I did a PhD in mathematics supervised by Michela Ottobre and Kevin Painter,
+			working on invariant measures of interacting particle systems, both analytically and
+			numerically.
+			<a href="mailto:tom_hodgson_4t_creditnature,com">Email me!</a>
 		</p>
 	</div>
 	<div class="about-image desktop-image">

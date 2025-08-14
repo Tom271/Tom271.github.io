@@ -7,6 +7,18 @@ export interface Post {
 	shorttitle?: string;
 	tags?: string[];
   }
+
+// Define what we expect from markdown modules
+interface MarkdownModule {
+  metadata: {
+    title: string;
+    date: string;
+    excerpt?: string;
+    shorttitle?: string;
+    tags?: string[];
+    [key: string]: any; // Allow other frontmatter properties
+  };
+}
   
 export const fetchMarkdownPosts = async () => {
 	const allPostFiles = import.meta.glob('/src/routes/blog/*.md');
@@ -14,7 +26,7 @@ export const fetchMarkdownPosts = async () => {
 
 	const allPosts = await Promise.all(
 		iterablePostFiles.map(async ([path, resolver]) => {
-			const { metadata } = await resolver();
+			const { metadata } = await resolver() as MarkdownModule;
 			const postPath = path.slice(11, -3);
 			// Set default values for metadata properties
 			const metaWithDefaults = {
