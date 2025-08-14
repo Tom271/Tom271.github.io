@@ -2,6 +2,7 @@
 title: 'Saving Simulation Data and Parameters Efficiently'
 shorttitle: 'Saving Simulation Data and Parameters Efficiently'
 date: '2020-03-01'
+tags: ['project']
 ---
 
 UPDATE (25/07/20): It seems my initial search for packages that do this was not hitting the right keywords. I've since found there are [quite a few out there!](https://gist.github.com/mnarayan/d33ea8a13c9d5da7c4d0) For now, I'm still using a version based on what's below. The next step is to look into the existing packages and see what fits my need best. I think it is still an interesting task to develop an experiment manager out of the work below---watch this space.
