@@ -1,0 +1,1 @@
+import"../chunks/CWj6FrbW.js";import"../chunks/C4_hL9aG.js";import{_ as a,$ as m,a0 as r}from"../chunks/B04gGUFm.js";var e=a('<h1>Get in touch</h1> <p><a href="mailto:tom_hodgson_4t_creditnature,com">Email me!</a></p>',1);function h(o){var t=e();r(2),m(o,t)}export{h as component};
