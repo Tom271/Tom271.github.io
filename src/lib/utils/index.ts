@@ -1,12 +1,17 @@
 
-export interface Post {
+export interface PostMeta {
 	title: string;
 	date: string;
 	excerpt?: string;
-	slug: string;
 	shorttitle?: string;
 	tags?: string[];
-  }
+	[key: string]: any; // Allow other frontmatter properties
+}
+
+export interface Post {
+	meta: PostMeta;
+	path: string;
+}
 
 // Define what we expect from markdown modules
 interface MarkdownModule {

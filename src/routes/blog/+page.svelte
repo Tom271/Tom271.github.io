@@ -1,21 +1,22 @@
-<script>
-	export let data;
+<script lang="ts">
+	import type { Post } from '$lib/utils';
+	export let data: { allPosts: Post[], allTags: string[] };
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 	
-	let currentTag = null;
-	let filteredPosts = data.allPosts;
+	let currentTag: string | null = null;
+	let filteredPosts: Post[] = data.allPosts;
 	
 	// Get current tag from URL params (only in browser)
 	$: if (browser) {
 		currentTag = $page.url.searchParams.get('tag');
 		filteredPosts = currentTag 
-			? data.allPosts.filter(post => post.meta.tags && post.meta.tags.includes(currentTag))
+			? data.allPosts.filter((post: Post) => post.meta.tags && post.meta.tags.includes(currentTag as string))
 			: data.allPosts;
 	}
 	
-	function filterByTag(tag) {
+	function filterByTag(tag: string | null): void {
 		if (tag) {
 			goto(`/blog?tag=${encodeURIComponent(tag)}`);
 		} else {

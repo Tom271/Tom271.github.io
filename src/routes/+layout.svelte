@@ -1,7 +1,7 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
 	import '$lib/styles/style.scss';
-	import { preloadCode, preloadData } from '$app/navigation';
+	// import { preloadCode, preloadData } from '$app/navigation';
 	// preloadCode('/blog', '/about', '/blog/*');
 </script>
 
