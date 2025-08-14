@@ -13,23 +13,23 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<link href="../_app/immutable/assets/0.EajoOLJy.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.V3mnCZCG.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/VFeR6n9j.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/B0T3S1e3.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Cq5oBeou.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BzKD5Q6H.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/rXutl5uv.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.P_uTOmiI.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.DEBala2G.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BCQF2SfB.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DCezBa9K.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/iDVjekDc.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BLQox4io.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/9LodFI8M.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.6T1Jj35k.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/Dp1pzeXC.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/CWj6FrbW.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/qPE0-ZqJ.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.WOg6l9CB.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/cDJUE48w.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CV0DN7n-.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/5.BQD-wIp3.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/mXOQ0EKN.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DV4Tjodk.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/D4vkxq_b.js"><!--[--><meta property="og:title" content="Using Julia on EDDIE at University of Edinburgh"/><!--]--><title>Using Julia on EDDIE at University of Edinburgh</title>
+		<link rel="modulepreload" href="../_app/immutable/chunks/CvhM-kpT.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.CAbztKL2.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CAVazQAu.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/7__10jbv.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.DlPduTZf.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/tyTEFCtd.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BwKFuoDb.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BwHA9MG3.js"><!--[--><meta property="og:title" content="Using Julia on EDDIE at University of Edinburgh"/><!--]--><title>Using Julia on EDDIE at University of Edinburgh</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents"><!--[--><!--[--><!----><header class="svelte-ttl8cq"><a aria-label="Home Icon" href="/" class="svelte-ttl8cq"><i class="fa-solid fa-leaf svelte-ttl8cq"></i></a> <nav><ul class="svelte-ttl8cq"><li class="svelte-ttl8cq"></li> <li class="svelte-ttl8cq"><a href="/blog" class="svelte-ttl8cq">Blog</a></li> <li class="svelte-ttl8cq"><a href="/about" class="svelte-ttl8cq">About</a></li></ul></nav></header><!----> <main><!----><!----><article><h1>Using Julia on EDDIE at University of Edinburgh</h1> <p class="metadata">2021-11-02</p> <p class="subtitle">How to find installed languages on a cluster.</p> <blockquote><p>TL;DR : <code>module load roslin/julia/1.5.3</code></p></blockquote> <p>For my next project during my PhD, I’ve decide to use the programming language <a href="https://julialang.org/" rel="nofollow">Julia</a>. Although it is much faster than Python, my usual language, there are still a few simulation I want to run that will take a lot of time. Previously I’ve used <a href="https://www.ed.ac.uk/information-services/research-support/research-computing/ecdf/high-performance-computing" rel="nofollow">EDDIE, the HPC cluster</a> at the University of Edinburgh when I needed a little more computing power, or when I expect simulations to take a while and don’t want to brick my laptop. MATLAB and Python usage is well documented on the UoE wiki, but now I need to work out how to get Julia going. This process will work for any language you want to see if is available on the cluster.</p> <p>As usual, first of all you’ll have to <a href="https://www.ed.ac.uk/information-services/computing/desktop-personal/vpn" rel="nofollow">sign into the UoE VPN</a>, and <code>ssh</code> into the cluster. These steps will be familiar if you’ve ever logged into the cluster before, and are well documented online. To find out whether the module exists, we can use <code>module available</code>.
@@ -38,15 +38,15 @@ First up we see our old friends MATLAB, Python and R.</p> <p>Scrolling further d
 			
 			<script>
 				{
-					__sveltekit_1yeyfjq = {
+					__sveltekit_761it0 = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.V3mnCZCG.js"),
-						import("../_app/immutable/entry/app.P_uTOmiI.js")
+						import("../_app/immutable/entry/start.DEBala2G.js"),
+						import("../_app/immutable/entry/app.6T1Jj35k.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
