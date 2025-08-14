@@ -3,6 +3,7 @@ title: 'Using Julia on EDDIE at University of Edinburgh'
 shorttitle: 'Julia for HPC'
 categories: [HPC]
 date: '2021-11-02'
+tags: ['project']
 ---
 
 > TL;DR : `module load roslin/julia/1.5.3`

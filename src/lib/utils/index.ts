@@ -5,6 +5,7 @@ export interface Post {
 	excerpt?: string;
 	slug: string;
 	shorttitle?: string;
+	tags?: string[];
   }
   
 export const fetchMarkdownPosts = async () => {
@@ -20,6 +21,7 @@ export const fetchMarkdownPosts = async () => {
 				...metadata,
 				shorttitle: metadata.shorttitle ?? metadata.title,
 				excerpt: metadata.excerpt ?? "",
+				tags: metadata.tags ?? [],
 			  };
 			return {
 				meta: metaWithDefaults,

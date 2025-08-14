@@ -3,6 +3,7 @@ title: 'BBSE1: The AudioMoth'
 shorttitle:
 date: '2025-02-16'
 excerpt: The art and craft of bioacoustics.
+tags: ['project']
 ---
 
 <script>
