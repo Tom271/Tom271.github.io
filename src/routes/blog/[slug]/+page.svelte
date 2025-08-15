@@ -2,9 +2,8 @@
 	export let data;
 	const { title, date, Content, excerpt } = data;
 	import { setContext } from 'svelte';
-	import Footnotes from '$lib/components/Footnotes.svelte';
 
-	setContext('article', { footnotes: [] });
+	setContext('article', { sidenotes: [] });
 </script>
 
 <svelte:head>
@@ -18,5 +17,4 @@
 	<p class="subtitle">{excerpt}</p>
 	<Content />
 	<hr />
-	<Footnotes />
 </article>

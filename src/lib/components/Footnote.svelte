@@ -7,27 +7,27 @@
 	// Get the article context
 	let articleContext = getContext('article');
   
-	// Ensure footnotes array exists
-	if (!articleContext.footnotes) {
-	  articleContext.footnotes = [];
+	// Ensure sidenotes array exists
+	if (!articleContext.sidenotes) {
+	  articleContext.sidenotes = [];
 	}
   
-	// Assign a unique ID to the footnote
-	let id = articleContext.footnotes.length + 1;
+	// Assign a unique ID to the sidenote
+	let id = articleContext.sidenotes.length + 1;
   
-	// Create unique IDs for reference and definition
-	let refId = `fnref-${id}`;
-	let noteId = `fn-${id}`;
+	// Create unique IDs for reference and sidenote
+	let refId = `sidenote-${id}`;
   
-	// Add footnote data to the context
-	articleContext.footnotes.push({
+	// Add sidenote data to the context (for cleanup if needed)
+	articleContext.sidenotes.push({
 	  id,
 	  refId,
-	  noteId,
 	  note
 	});
-  </script>
-  
-  
-  <slot></slot><a href="#{noteId}" id="{refId}" class="footnote-ref"><sup>{id}</sup>
-  </a>
+</script>
+
+<span class="sidenote-wrapper">
+	<label class="sidenote-number" for="{refId}"></label>
+	<input type="checkbox" id="{refId}" class="margin-toggle sidenote-toggle" />
+	<span class="sidenote">{@html note}</span>
+</span>
