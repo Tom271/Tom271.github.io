@@ -12,23 +12,23 @@
 	  <title>The Thin End of the Hedge</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="../_app/immutable/assets/0.CXpua2fJ.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.EDN5lPt5.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Bf7oCvxu.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BGhbXEGX.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BCJAlATI.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BdJq1nwz.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/vOgRVvV0.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.CDtGAgqc.js">
+		<link href="../_app/immutable/assets/0.7yEPKzp4.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.Gn0Pu13J.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Dt8mPSu0.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BOTIbyxR.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/GPX1Tc2a.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/ChZEz_DI.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DfgmMsFP.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.D3_3IJ4_.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/Dp1pzeXC.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/CWj6FrbW.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Dfr1-gGh.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CaBbN06y.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.B0KZQz9X.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Cud7yNtm.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/5.BcMgc76m.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/PrD-4zkZ.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CWTqlkyf.js"><!--[--><meta property="og:title" content="Saving Simulation Data and Parameters Efficiently"/><!--]--><title>Saving Simulation Data and Parameters Efficiently</title>
+		<link rel="modulepreload" href="../_app/immutable/chunks/DRKZG4t7.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_sdjcqYj.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.Iy5OpIr2.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BrF1tBA6.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.Dosi4HIk.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/C9wncseY.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/kgxBIdvj.js"><!--[--><meta property="og:title" content="Saving Simulation Data and Parameters Efficiently"/><!--]--><title>Saving Simulation Data and Parameters Efficiently</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents"><!--[--><!--[--><!----><header class="svelte-ttl8cq"><a aria-label="Home Icon" href="/" class="svelte-ttl8cq"><i class="fa-solid fa-leaf svelte-ttl8cq"></i></a> <nav><ul class="svelte-ttl8cq"><li class="svelte-ttl8cq"></li> <li class="svelte-ttl8cq"><a href="/blog" class="svelte-ttl8cq">Blog</a></li> <li class="svelte-ttl8cq"><a href="/about" class="svelte-ttl8cq">About</a></li></ul></nav></header><!----> <main><!----><!----><article><h1>Saving Simulation Data and Parameters Efficiently</h1> <p class="metadata">2020-03-01</p> <p class="subtitle">Build your own experiment manager.</p> <p>UPDATE (25/07/20): It seems my initial search for packages that do this was not hitting the right keywords. I’ve since found there are <a href="https://gist.github.com/mnarayan/d33ea8a13c9d5da7c4d0" rel="nofollow">quite a few out there!</a> For now, I’m still using a version based on what’s below. The next step is to look into the existing packages and see what fits my need best. I think it is still an interesting task to develop an experiment manager out of the work below---watch this space.</p> <p>During my work on particle systems, I have spent a lot of time simulating trajectories of particles using different parameters and initial conditions. Until now, I’d been either running a new simulation every time, or saving individual datasets with filenames like <code>GammaFullScaling04</code>, or other incomprehensible strings made by concatenating parameter values. As the amount of data has increased, this has become untenable, so I’ve been spending some time recently coming up with a better way. This problem is not unique to my situation, I imagine many scientists are in a similar position! After some googling, I couldn’t find any clear method. After a chat with <a href="https://sebstrug.com/" rel="nofollow">a data engineering friend of mine</a> he suggested looking into <code>.yaml</code> files as a way to store parameters.</p> <p>There are two main problems I needed to solve:</p> <ol><li>How can I associate a parameter set with a data file?</li> <li>How can I retrieve the data file quickly when I want to use it again?</li></ol> <p>These themselves are associated with the two obvious parts of data storage: reading and writing. Each of these poses their own questions. My current data pipeline is as follows:</p> <p>This probably raises more questions than it answers but hopefully what follows will answer them.</p> <h2>Writing Data: Storage Format</h2> <p>The data comes from the simulation as two large matrices (on the order of 100 columns and 1000 rows.). The simplest way to store data in Python is using the <a href="https://docs.python.org/3/library/pickle.html" rel="nofollow">Pickle</a> module. This module is very easy to use, and can be used to store <em>any</em> Python object. Such flexibility wasn’t really required here, I knew a lot about the type of data coming in (as I was generating it myself). As an easy method, this is what I was using for the past 6 months. However after having a look around, it seems <a href="https://www.benfrederickson.com/dont-pickle-your-data/" rel="nofollow">Pickle is not the best way</a>. This prompted me to look into other alternatives. The typical way in most science seems to be using a <code>.csv</code> file. This has a few benefits: it is widely supported, readable and <a href="https://towardsdatascience.com/the-best-format-to-save-pandas-data-414dca023e0d" rel="nofollow">still beats many more modern methods</a>. Two relatively new formats on the scene are <a href="https://blog.rstudio.com/2016/03/29/feather/" rel="nofollow">feather</a> and <a href="https://arrow.apache.org/docs/python/parquet.html" rel="nofollow">parquet</a>. These are attractive as they allow for smaller file sizes, faster read/write speed and support across more languages. After reading around, I settled on using feather to store data.</p> <h2>Writing Data: Storing Parameter Sets</h2> <p>Previously, I’d remember which parameter sets generated what data by naming the file with a list of parameters, or having a file tree where each folder had a parameter choice. Obviously, this is not the best way. Looking for a data set usually meant guessing what order the parameters were saved in and lots of clicking. Now I use a <code>.yaml</code> file. This is a way of storing what is effectively a large Python dictionary, which can be read in using <a href="https://pypi.org/project/PyYAML/" rel="nofollow"><code>pyyaml</code></a>. The keys of the dictionary are the filenames of the data, and the values are also dictionaries that contain parameter sets. File names were randomly generated using <a href="https://pypi.org/project/coolname/" rel="nofollow"><code>coolname</code></a> . Any random string can be used, but not all of them will be as amusing.</p> <p>The first step is to read in the <code>.yaml</code> file:</p> <pre class="language-python"><!----><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
@@ -86,15 +86,15 @@ x<span class="token punctuation">,</span> v <span class="token operator">=</span
 			
 			<script>
 				{
-					__sveltekit_1mmnuk8 = {
+					__sveltekit_rc268n = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.EDN5lPt5.js"),
-						import("../_app/immutable/entry/app.CDtGAgqc.js")
+						import("../_app/immutable/entry/start.Gn0Pu13J.js"),
+						import("../_app/immutable/entry/app.D3_3IJ4_.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
