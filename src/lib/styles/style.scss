@@ -375,8 +375,32 @@ label.margin-toggle:not(.sidenote-number) {
 
 @media (max-width: 760px) {
   body {
-    width: 84%;
-    padding: 0 8%;
+    width: 90%;
+    padding: 0 5%;
+  }
+
+  article {
+    padding: 2rem 1rem;
+  }
+
+  p,
+  dl,
+  ol,
+  ul {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
   }
 
   hr,
