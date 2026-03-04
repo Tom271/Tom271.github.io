@@ -27,8 +27,8 @@ interface MarkdownModule {
 }
   
 export const fetchMarkdownPosts = async () => {
-	const allPostFiles = import.meta.glob('/src/routes/blog/*.md');
-	const draftFiles = import.meta.glob('/src/routes/blog/drafts/*.md');
+	const allPostFiles = import.meta.glob('/src/routes/projects/*.md');
+	const draftFiles = import.meta.glob('/src/routes/projects/drafts/*.md');
 
 	let iterablePostFiles = Object.entries(allPostFiles);
 
@@ -55,4 +55,34 @@ export const fetchMarkdownPosts = async () => {
 	);
 
 	return allPosts;
+};
+
+export const fetchWeeknotes = async () => {
+	const allWeeknoteFiles = import.meta.glob('/src/routes/weeknotes/*.md');
+	const draftFiles = import.meta.glob('/src/routes/weeknotes/drafts/*.md');
+
+	let iterableFiles = Object.entries(allWeeknoteFiles);
+
+	if (dev) {
+		iterableFiles = [...iterableFiles, ...Object.entries(draftFiles)];
+	}
+
+	const allWeeknotes = await Promise.all(
+		iterableFiles.map(async ([path, resolver]) => {
+			const { metadata } = await resolver() as MarkdownModule;
+			const postPath = path.slice(11, -3);
+			const metaWithDefaults = {
+				...metadata,
+				shorttitle: metadata.shorttitle ?? metadata.title,
+				excerpt: metadata.excerpt ?? "",
+				tags: metadata.tags ?? [],
+			};
+			return {
+				meta: metaWithDefaults,
+				path: postPath
+			};
+		})
+	);
+
+	return allWeeknotes;
 };

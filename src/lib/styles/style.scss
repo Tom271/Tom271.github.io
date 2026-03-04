@@ -113,7 +113,8 @@ p.subtitle {
 }
 
 article {
-  padding: 5rem;
+  width: 85%;
+  padding: 5rem 2rem;
 }
 
 section {
@@ -215,8 +216,8 @@ img {
 .marginnote {
   float: right;
   clear: right;
-  margin-right: -45%;
-  width: 35%;
+  margin-right: max(-15vw, -270px);
+  width: min(14vw, 250px);
   margin-top: 0.3rem;
   margin-bottom: 0;
   font-size: 0.8rem;
@@ -380,6 +381,7 @@ label.margin-toggle:not(.sidenote-number) {
   }
 
   article {
+    width: auto;
     padding: 2rem 1rem;
   }
 

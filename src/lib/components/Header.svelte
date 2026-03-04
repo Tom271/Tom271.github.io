@@ -4,7 +4,10 @@
 		<ul>
 			<li></li>
 			<li>
-				<a href="/blog">Blog</a>
+				<a href="/projects">Projects</a>
+			</li>
+			<li>
+				<a href="/weeknotes">Weeknotes</a>
 			</li>
 			<li>
 				<a href="/about">About</a>

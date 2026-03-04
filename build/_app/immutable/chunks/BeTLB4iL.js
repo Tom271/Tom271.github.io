@@ -1,0 +1,1 @@
+import"./CWj6FrbW.js";import"./RxoYqFfH.js";import{f as o,b as r}from"./BjeMUns6.js";const a={title:"Week 10, 2026",date:"2026-03-04",excerpt:"A first weeknote."},{title:f,date:n,excerpt:c}=a;var p=o("<p>This is the first weeknote. More to come.</p>");function d(t){var e=p();r(t,e)}export{d as default,a as metadata};
