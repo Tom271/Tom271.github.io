@@ -1,3 +1,4 @@
+import { dev } from '$app/environment';
 
 export interface PostMeta {
 	title: string;
@@ -27,7 +28,13 @@ interface MarkdownModule {
   
 export const fetchMarkdownPosts = async () => {
 	const allPostFiles = import.meta.glob('/src/routes/blog/*.md');
-	const iterablePostFiles = Object.entries(allPostFiles);
+	const draftFiles = import.meta.glob('/src/routes/blog/drafts/*.md');
+
+	let iterablePostFiles = Object.entries(allPostFiles);
+
+	if (dev) {
+		iterablePostFiles = [...iterablePostFiles, ...Object.entries(draftFiles)];
+	}
 
 	const allPosts = await Promise.all(
 		iterablePostFiles.map(async ([path, resolver]) => {
