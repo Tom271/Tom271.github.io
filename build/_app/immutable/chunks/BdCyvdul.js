@@ -1,0 +1,2 @@
+import{a as i,f as o}from"./BPcyrZAV.js";import"./DmCyIBf7.js";import{a8 as a}from"./Z2gkJeug.js";const l={title:"Week 10, 2026",date:"2026-03-04",excerpt:"A first weeknote."},{title:p,date:c,excerpt:f}=l;var n=o(`<p>This is the first weeknote. More to come.
+This week I’m thinking about:</p> <ul><li>Occupancy models and biolith</li> <li></li> <li>Simulation based inference</li> <li>Cognitive Debt</li></ul>`,1);function d(e){var t=n();a(2),i(e,t)}export{d as default,l as metadata};
